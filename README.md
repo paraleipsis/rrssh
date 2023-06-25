@@ -54,9 +54,9 @@ async def stream():
         yield i
 
 
-rssh_server.path('GET', '/home', home)
-rssh_server.path('POST', '/create', create)
-rssh_server.path('STREAM', '/stream', stream)
+rssh_server.path(request_type='GET', resource='/home', callback=home)
+rssh_server.path(request_type='POST', resource='/create', callback=create)
+rssh_server.path(request_type='STREAM', resource='/stream', callback=stream)
 
 
 async def main():
